@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Мой сайт с видео</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+iframe {
+  margin-top: 25px;
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Моё видео</h1>
+  <p>Смотри ниже 👇</p>
+
+  <iframe
+    src="https://www.youtube.com/embed/BywisR3mcSw"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+</body>
+</html>
