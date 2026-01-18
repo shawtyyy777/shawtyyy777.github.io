@@ -2,53 +2,55 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Мой сайт с видео</title>
+<title>Video site</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  text-align: center;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-h1 {
-  font-size: 40px;
-}
-
-p {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-iframe {
-  margin-top: 25px;
-  width: 100%;
-  height: 450px;
-  border-radius: 12px;
+#soundBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
 }
 </style>
-
 </head>
 <body>
 
-<div class="container">
-  <h1>Моё видео</h1>
-  <p>Смотри ниже 👇</p>
+<video id="bgvideo" autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Твой браузер не поддерживает видео.
+</video>
 
-  <iframe
-    src="https://www.youtube.com/embed/BywisR3mcSw"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
+<button id="soundBtn">Включить звук</button>
+
+<script>
+const video = document.getElementById("bgvideo");
+const btn = document.getElementById("soundBtn");
+
+btn.onclick = () => {
+    video.muted = false;
+    video.play();
+    btn.style.display = "none";
+};
+</script>
 
 </body>
 </html>
